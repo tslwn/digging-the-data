@@ -1,0 +1,125 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.75em;
+}
+a {
+  color: black;
+  text-decoration: underline;
+}
+a:hover {
+  color: grey;
+}
+a circle.grant:hover {
+  cursor: pointer;
+}
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#header {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  z-index: 999;
+}
+#tooltip span {
+  display: block;
+  margin-bottom: 8px;
+}
+#grant-info {
+  font-size: 1.25em;
+}
+#grant-title, #grant-description {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+q {
+  font-size: 30px;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+.q:before, .q:after {
+  display: inline;
+  line-height: 0;
+  position: relative;
+  top: 18px;
+  font-size: 3em;
+}
+.q:before {
+  content: open-quote;
+  padding-right: 8px;
+}
+.q:after {
+  content: close-quote;
+}
+
+#chart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 80%;
+}
+#footer div {
+  display: flex;
+  align-items: center;
+}
+
+#attributions {
+  float: right;
+}
+#footer-text {
+  text-align: right;
+}
+#footer img {
+  vertical-align: middle;
+  padding-left: 4px;
+}
+#footer a {
+  padding: 4px;
+}
+.icon-github {
+  height: 24px;
+}
+
+#controls {
+  float: left;
+}
+#controls output {
+  padding-right: 4px;
+  line-height: 24px;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: black;
+  width: 100px;
+  height: 2px;
+  border-radius: 1px;
+  margin: 0 auto;
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: black;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}​

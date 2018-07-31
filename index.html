@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<title>Digging The Data</title>
+<meta charset="utf-8">
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="script.js"></script>
+<script>
+
+  function changeYear(year) {
+    document.querySelector('#year').value = year;
+  }
+
+  function row(d) {
+    return {
+      id: d['Identifier'],
+      awardDate: new Date(Date.parse(d['Award Date'])),
+      title: d['Title'],
+      description: d['Description'],
+      amount: +d['Amount Awarded'],
+      currency: d['Currency'],
+      fundingOrg: d['Funding Org:Name'],
+      recipientOrg: d['Recipient Org:Name'],
+      x: +d.x,
+      y: +d.y
+    };
+  }
+  
+  const file = 'static/data.csv';
+
+  // Load data from file
+  d3.csv(file, row, (error, data) => {
+    if (error) throw error;
+
+    // Create Chart with constructor
+    const chart = new Chart({
+      chart: document.querySelector('#chart'),
+      header: document.querySelector('#header'),
+      tooltip: document.querySelector('#tooltip'),
+      data: data
+    });
+   
+    chart.update(data.filter(d => d.awardDate.getFullYear() === 2004));
+
+    // Update data when year changes
+    d3.select('#range').on('input', () => {
+      value = +document.querySelector('#range').value;
+      chart.update(data.filter(d => d.awardDate.getFullYear() === value));
+    });
+});
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="header" class="no-select">
+  <h1>Who has funded what themes throughout the years?</h1>
+  <span id="tooltip"></span>
+</div>
+<div id="chart"></div>
+<div id="about"></div>
+<div id="footer" class="no-select">
+  <div id="controls">
+    <output for="range" id="year">2004</output>
+    <input type="range" id="range" min="2004" value="2004" max="2017" step="1" oninput="changeYear(this.value);"></input>
+  </div>
+  <div id="attributions">
+      Powered by <a href="http://www.threesixtygiving.org/" target="blank">360Giving</a>
+      <a href="https://github.com/tslwn">
+        <img src="static/GitHub-Mark-64px.png" target="blank" alt="GitHub" class="icon-github"></img>
+      </a>
+  </div>
+</div>
+
+</body>
+
+</html>
