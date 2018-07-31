@@ -1,4 +1,4 @@
-# Digging The Data
+# theme2d
 
 This visualisation is in response to 360Giving's challenge ['Digging the Data'](https://challenge.threesixtygiving.org/), for which I chose to answer the question 'Who has funded what themes throughout the years?'.
 
