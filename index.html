@@ -48,7 +48,7 @@
 
     // Update data when year changes
     d3.select('#range').on('input', () => {
-      value = +document.querySelector('#range').value;
+      value = +document.querySelector('#year').value;
       chart.update(data.filter(d => d.awardDate.getFullYear() === value));
     });
 });
