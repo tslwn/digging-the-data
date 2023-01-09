@@ -1,6 +1,6 @@
 # theme2d
 
-This visualisation is in response to 360Giving's challenge ['Digging the Data'](https://challenge.threesixtygiving.org/), for which I chose to answer the question 'Who has funded what themes throughout the years?'.
+This visualisation is in response to 360Giving's challenge ['Digging the Data'](https://www.threesixtygiving.org/data/reports-publications-and-analysis/data-visualisation-challenge/), for which I chose to answer the question 'Who has funded what themes throughout the years?'.
 
 On reading it I was struck by the word 'theme'. After exploring the data in GrantNav, I wondered whether techniques from Natural Language Processing and Machine Learning could evince a notion of theme from the text associated with each grant. In brief, I obtained a 2-d vector corresponding to each grant by taking a weighted average of vector representations of its words and reducing each vector in this set to two dimensions so that they could be visualised in the browser. The aim therefore is that the position of each circle encodes its 'theme'; the area in each case corresponds to the amount awarded (GBP). The circles are coloured according to the funding organisation.
 
